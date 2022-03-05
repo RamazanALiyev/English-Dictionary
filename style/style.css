@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+section {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100vh;
+    margin-top: 20px;
+}
+
+.container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.container .cross {
+    font-size: 50px;
+    color: rgb(255, 0, 0, .7);
+    transition-duration: 1s;
+    transition-property: color, transform;
+}
+
+.container .cross:hover {
+    color: rgb(255, 0, 0);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+}
+
+.button .translate {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    box-shadow: 3px 3px 8px gray;
+}
+.button .translate i:nth-child(1){
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    animation: animate3 2s infinite;
+}
+.button .translate i:nth-child(2){
+    position: absolute;
+    top: 20px;
+    right: 450px;
+    animation: animate3 2s infinite;
+}
+.button .translate i:nth-child(3){
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    animation: animate3 2s infinite;
+}
+.button .translate i:nth-child(4){
+    position: absolute;
+    top: 75px;
+    right: 450px;
+    animation: animate3 2s infinite forwards;
+}
+.button .translate i:nth-child(1):hover{
+    animation-play-state: paused;
+}
+.button .translate i:nth-child(2):hover{
+    animation-play-state: paused;
+}
+.button .translate i:nth-child(3):hover{
+    animation-play-state: paused;
+}
+.button .translate i:nth-child(4):hover{
+    animation-play-state: paused;
+}
+@keyframes animate3{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container button {
+    width: 500px;
+    height: 120px;
+    text-transform: capitalize;
+    font-size: 28px;
+    border-radius: 10px;
+    border-color: olive;
+}
+
+.container button:focus {
+    border-color: orange;
+}
+
+.container .tick {
+    font-size: 50px;
+    color: rgb(0, 128, 0, .7);
+    transition-duration: 1s;
+    transition-property: color, transform;
+}
+
+.container .tick:hover {
+    color: rgb(0, 128, 0);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.container p#empty {
+    font-size: 40px;
+}
+
+.counter {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 55px;
+}
+
+.empty {
+    position: absolute;
+    top: 65%;
+}
+
+.empty #emptyParagraph {
+    color: green;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: 1px 1px 9px green;
+}
+
+.empty #emptyparagraph {
+    overflow-wrap: break-word;
+    color: red;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: 1px 1px 9px red;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    opacity: 0.3;
+    filter: blur(3px);
+}
+
+.ruler {
+    width: max-content;
+    text-align: center;
+    text-shadow: 1px 1px 5px lightblue;
+    font-size: 35px;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 3%;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.reset {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+}
+
+.reset a {
+    text-decoration: none;
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: blue;
+    text-transform: capitalize;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: opacity 3s linear infinite;
+}
+
+.reset a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 8px;
+    width: 20px;
+    height: 2px;
+    background-color: blue;
+    transition: 1s width;
+    animation: opacity 3s linear infinite;
+}
+
+.reset a:hover:after {
+    width: 67px;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
